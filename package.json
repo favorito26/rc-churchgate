@@ -40,6 +40,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "balanced-match": "^1.0.2",
     "baseline-browser-mapping": "^2.11.6",
+    "better-auth": "^1.6.25",
     "blake3-wasm": "^2.1.5",
     "brace-expansion": "^1.1.16",
     "braces": "^3.0.3",
@@ -310,6 +311,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@better-auth/cli": "^1.4.21",
     "drizzle-kit": "^0.31.10",
     "wrangler": "^4.115.0"
   }
