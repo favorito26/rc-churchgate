@@ -1,7 +1,7 @@
 import { integer } from "drizzle-orm/sqlite-core";
 
 export const timestamps = {
-    ...timestamps,
+    createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
     updatedAt: integer("updated_at", { mode: "timestamp" }),
 };
 export const softDelete = {

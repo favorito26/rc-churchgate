@@ -25,7 +25,8 @@
     {
       "binding": "DB",
       "database_name": "rc-churchgate-db",
-      "database_id": "956ca6fb-2257-4c84-9db5-367f7300f144"
+      "database_id": "956ca6fb-2257-4c84-9db5-367f7300f144",
+      "migrations_dir": "../../packages/database/migrations"
     }
   ],
   // "ai": {

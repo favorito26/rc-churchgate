@@ -1,4 +1,4 @@
-import { defineConfig } from "drizzlekit";
+import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
     schema: "./schema/index.js",
