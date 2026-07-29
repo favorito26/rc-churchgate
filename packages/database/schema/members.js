@@ -1,7 +1,6 @@
 import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 import { users } from "./users";
 import { timestamps } from "./common";
-import { timestamp } from "drizzle-orm/pg-core";
 export const members = sqliteTable("members", {
     id: integer("id").primaryKey({ autoIncrement: true }),
     userId: integer("user_id").notNull().references(() => users.id),
@@ -9,7 +8,7 @@ export const members = sqliteTable("members", {
     lastname: text("last_name").notNull(),
     phone: text("phone"),
     gender: text("gender"),
-    dob: integer("dob", { mode: timestamp }),
+    dob: integer("dob", { mode: "timestamp" }),
     profession: text("profession"),
     bio: text("bio"),
     profilePhoto: text("profile_photo"),
