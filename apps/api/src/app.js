@@ -2,6 +2,11 @@ import { Hono } from "hono";
 import routes from "./routes";
 
 const app = new Hono();
+app.use("*", async (c, next) => {
+  c.set("env", env(c));
+  await next();
+});
+
 
 app.get("/", (c) => {
   return c.json({
