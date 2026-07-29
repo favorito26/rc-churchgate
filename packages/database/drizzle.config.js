@@ -1,7 +1,9 @@
-import {defineConfig} from "drizzlekit";
+import { defineConfig } from "drizzlekit";
 
-export default defineConfig( {
+export default defineConfig({
     schema: "./schema/index.js",
     out: "./migrations",
     dialect: "sqlite",
+    strict: true,
+    verbose: true,
 });
