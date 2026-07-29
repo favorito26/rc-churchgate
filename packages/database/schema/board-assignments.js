@@ -2,7 +2,7 @@ import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
 import { members } from "./members";
 import { boardPositions } from "./board-positions";
 import { rotaryYears } from "./rotary-years";
-
+import { timestamps } from "./common";
 export const boardAssignments = sqliteTable("board_assignments", {
     id: integer("id").primaryKey({ autoIncrement: true }),
     memberId: integer("member_id").notNull().references(() => members.id),
@@ -10,5 +10,5 @@ export const boardAssignments = sqliteTable("board_assignments", {
     rotaryYearId: integer("rotary_year_id").notNull().references(() => rotaryYears.id),
     message: text("message"),
     displayOrder: integer("display_order").notNull().default(0),
-    createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+    ...timestamps
 });

@@ -1,5 +1,5 @@
 import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
-
+import { timestamps } from "./common";
 export const rotaryYears = sqliteTable("rotary_years", {
     id: integer("id").primaryKey({ autoIncrement: true }),
     name: text("name").notNull(),
