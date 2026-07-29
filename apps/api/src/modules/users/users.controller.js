@@ -1,10 +1,8 @@
 import { listUsers } from "./users.service";
+import { success } from "../../utils/response";
 
 export async function index(c) {
     const result = await listUsers(c);
 
-    return c.json({
-        success: true,
-        data: result.results,
-    });
+    return success(c, result.results);
 }
