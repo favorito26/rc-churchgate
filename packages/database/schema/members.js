@@ -14,6 +14,5 @@ export const members = sqliteTable("members", {
     bio: text("bio"),
     profilePhoto: text("profile_photo"),
     joinedAt: integer("joined_at", { mode: "timestamp" }),
-    createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
-
+    ...timestamps,
 })

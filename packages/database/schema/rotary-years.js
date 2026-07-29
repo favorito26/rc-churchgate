@@ -7,5 +7,5 @@ export const rotaryYears = sqliteTable("rotary_years", {
     startDate: integer("start_date", { mode: "timestamp" }).notNull(),
     endDate: integer("end_date", { mode: "timestamp" }).notNull(),
     isCurrent: integer("is_current", { mode: "boolean" }).notNull().default(false),
-    createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+    ...timestamps,
 });
