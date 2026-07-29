@@ -1,0 +1,1 @@
+export const getDb = (c) => c.env.DB;
