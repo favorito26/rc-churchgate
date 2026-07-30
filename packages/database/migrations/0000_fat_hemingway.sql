@@ -1,9 +1,12 @@
 CREATE TABLE `users` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`email` text NOT NULL,
-	`password_hash` text NOT NULL,
+	`password_hash` text,
+	`email_verified` integer DEFAULT false NOT NULL,
 	`role` text DEFAULT 'member' NOT NULL,
-	`status` text DEFAULT 'active' NOT NULL
+	`status` text DEFAULT 'active' NOT NULL,
+	`created_at` integer NOT NULL,
+	`updated_at` integer
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `users_email_unique` ON `users` (`email`);--> statement-breakpoint
