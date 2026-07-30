@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import routes from "./routes";
 import { env } from "./config/env";
 import { createAuth } from "./auth/auth";
@@ -10,6 +11,13 @@ app.use("*", async (c, next) => {
     await next();
 });
 
+app.use("/api/*", cors({
+    origin: "http://localhost:3000",
+    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+}));
+
 app.get("/", (c) => {
     return c.json({
         success: true,
@@ -18,8 +26,7 @@ app.get("/", (c) => {
     });
 });
 
-// Better Auth handler
-app.all("/api/auth/*", async (c) => {
+app.all("/api/better-auth/*", async (c) => {
     const auth = createAuth(c);
     return auth.handler(c.req.raw);
 });

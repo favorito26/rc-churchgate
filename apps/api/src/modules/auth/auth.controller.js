@@ -2,6 +2,7 @@ import { loginSchema, registerSchema } from "./auth.validation";
 import * as authService from "./auth.service";
 import { success, error } from "../../utils/response";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
+import { toUserResponse } from "./auth.mapper";
 
 export async function register(c) {
     try {
@@ -32,14 +33,7 @@ export async function login(c) {
         });
 
         return success(
-            c,
-            {
-                id: user.id,
-                email: user.email,
-                role: user.role,
-                status: user.status,
-            },
-            "Login successful"
+            c, toUserResponse(user), "Login successful"
         );
     } catch (err) {
         console.error(err);
@@ -61,14 +55,7 @@ export async function me(c) {
     const user = c.get("user");
 
     return success(
-        c,
-        {
-            id: user.id,
-            email: user.email,
-            role: user.role,
-            status: user.status,
-        },
-        "Current user"
+        c, toUserResponse(user), "Current user"
     );
 }
 
