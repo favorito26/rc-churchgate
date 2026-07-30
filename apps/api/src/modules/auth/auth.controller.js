@@ -1,7 +1,7 @@
 import { loginSchema, registerSchema } from "./auth.validation";
 import * as authService from "./auth.service";
 import { success, error } from "../../utils/response";
-import { getCookie, setCookie } from "hono/cookie";
+import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 
 export async function register(c) {
     try {

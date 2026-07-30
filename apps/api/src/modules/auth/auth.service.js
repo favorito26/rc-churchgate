@@ -2,7 +2,7 @@ import { hashPassword, verifyPassword } from "../../utils/password";
 import { findUserByEmail, createUser, createMember, } from "./auth.repository";
 import { ConflictError, UnauthorizedError } from "../../utils/errors";
 import { generateSessionToken, getSessionExpiry } from "../../utils/session";
-import { createSession } from "./session.repository";
+import { createSession, deleteSession } from "./session.repository";
 
 export async function register(c, data) {
 

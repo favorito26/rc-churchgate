@@ -17,6 +17,17 @@ export async function requireAuth(c, next) {
     }
 
     const session = await findSessionByToken(c, token);
+
+    if (!session) {
+        return c.json(
+            {
+                success: false,
+                message: "Invalid session",
+            },
+            401
+        );
+    }
+
     const user = await findUserById(c, session.userId);
 
     if (!user) {
@@ -24,16 +35,6 @@ export async function requireAuth(c, next) {
             {
                 success: false,
                 message: "User not found",
-            },
-            401
-        );
-    }
-
-    if (!session) {
-        return c.json(
-            {
-                success: false,
-                message: "Invalid session",
             },
             401
         );

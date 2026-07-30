@@ -40,11 +40,3 @@ export async function deleteSession(c, token) {
         .delete(sessions)
         .where(eq(sessions.token, token));
 }
-
-export async function deleteSession(c, token) {
-    const db = getDrizzle(c);
-
-    await db
-        .delete(sessions)
-        .where(eq(sessions.token, token));
-}
