@@ -1,6 +1,8 @@
 import { hashPassword, verifyPassword } from "../../utils/password";
 import { findUserByEmail, createUser, createMember, } from "./auth.repository";
 import { ConflictError, UnauthorizedError } from "../../utils/errors";
+import { generateSessionToken, getSessionExpiry } from "../../utils/session";
+import { createSession } from "./session.repository";
 
 export async function register(c, data) {
 
@@ -50,5 +52,23 @@ export async function login(c, data) {
         throw new UnauthorizedError("Invalid email or password");
     }
 
-    return user;
+    const token = generateSessionToken();
+    const expiresAt = getSessionExpiry();
+    const now = new Date();
+    const session = await createSession(c, {
+        userId: user.id,
+        token,
+        expiresAt,
+        lastUsedAt: now,
+        createdAt: now,
+        updatedAt: now,
+    })
+
+    return {
+        user, session
+    }
+}
+
+export async function logout(c, token) {
+    await deleteSession(c, token);
 }

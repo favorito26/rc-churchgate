@@ -5,7 +5,7 @@ import * as schema from "../../../../packages/database/schema";
 
 export function createAuth(c) {
     const db = drizzle(c.env.DB, { schema });
-
+    
     return betterAuth({
         database: drizzleAdapter(db, {
             provider: "sqlite",
