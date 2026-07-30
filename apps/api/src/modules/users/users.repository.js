@@ -1,9 +1,8 @@
-import { getDb } from "../../db/client";
+import { getDrizzle } from "../../db/drizzle";
+import { users } from "../../../../../packages/database/schema";
 
 export async function getUsers(c) {
-    const db = getDb(c);
+    const db = getDrizzle(c);
 
-    return await db
-        .prepare("SELECT id, email, created_at FROM users ORDER BY id")
-        .all();
+    return await db.select().from(users);
 }
