@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "./Navbar";
 import { useAuth } from "@/components/providers/AuthProvider";
 
@@ -14,6 +15,22 @@ export default function AppShell({ children }) {
         <div className="flex min-h-screen">
             <aside className="w-64 border-r p-4">
                 <h2 className="mb-6 text-xl font-bold">RC Churchgate</h2>
+
+                <nav className="space-y-2">
+                    <Link
+                        href="/"
+                        className="block rounded px-3 py-2 hover:bg-gray-100"
+                    >
+                        Dashboard
+                    </Link>
+
+                    <Link
+                        href="/members"
+                        className="block rounded px-3 py-2 hover:bg-gray-100"
+                    >
+                        Members
+                    </Link>
+                </nav>
 
                 {user && (
                     <div className="mb-6">

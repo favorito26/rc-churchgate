@@ -2,7 +2,7 @@ import { loginSchema, registerSchema } from "./auth.validation";
 import * as authService from "./auth.service";
 import { success, error } from "../../utils/response";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
-import { toUserResponse } from "./auth.mapper";
+import { toUserResponse } from "../members/member.dto";
 
 export async function register(c) {
     try {
