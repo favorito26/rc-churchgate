@@ -16,6 +16,7 @@
     "prettier": "^3.6.2"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3"
+    "bcryptjs": "^3.0.3",
+    "drizzle-orm": "^0.45.2"
   }
 }

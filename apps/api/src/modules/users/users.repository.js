@@ -1,3 +1,4 @@
+import { eq } from "drizzle-orm";
 import { getDrizzle } from "../../db/drizzle";
 import { users } from "../../../../../packages/database/schema";
 
