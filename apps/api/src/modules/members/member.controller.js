@@ -8,3 +8,17 @@ export async function getMembers(c) {
         data: members,
     });
 }
+
+export async function createMember(c) {
+    const data = await c.req.json();
+
+    const member = await memberService.createMember(c, data);
+
+    return c.json(
+        {
+            success: true,
+            data: member,
+        },
+        201
+    );
+}

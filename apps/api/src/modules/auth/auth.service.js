@@ -1,39 +1,17 @@
 import { hashPassword, verifyPassword } from "../../utils/password";
-import { findUserByEmail, createUser, createMember, } from "./auth.repository";
+import { createMember } from "../members/member.repository";
+import {
+    findUserByEmail,
+    createUser,
+} from "../users/users.repository";
 import { ConflictError, UnauthorizedError } from "../../utils/errors";
 import { generateSessionToken, getSessionExpiry } from "../../utils/session";
 import { createSession, deleteSession } from "./session.repository";
+import { createUserWithMember } from "../shared/user-member.service";
+import { toUserResponse } from "../members/member.dto";
 
 export async function register(c, data) {
-
-    const existingUser = await findUserByEmail(c, data.email);
-
-    if (existingUser) {
-        throw new ConflictError("Email already registered");
-    }
-
-    const passwordHash = await hashPassword(data.password);
-    const now = new Date();
-
-    const user = await createUser(c, {
-        email: data.email,
-        passwordHash,
-        role: "member",
-        status: "active",
-        createdAt: now,
-        updatedAt: now,
-    });
-
-    // Create member profile
-    const member = await createMember(c, {
-        userId: user.id,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        createdAt: now,
-        updatedAt: now,
-    });
-
-    return { user, member, };
+    return createUserWithMember(c, data);
 }
 
 export async function login(c, data) {
@@ -65,7 +43,7 @@ export async function login(c, data) {
     })
 
     return {
-        user, session
+        user: toUserResponse(user), session
     }
 }
 

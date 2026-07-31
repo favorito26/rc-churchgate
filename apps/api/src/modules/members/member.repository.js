@@ -14,3 +14,14 @@ export async function findAllMembers(c) {
         .from(members)
         .orderBy(members.fullName);
 }
+
+export async function createMember(c, data) {
+    const db = getDrizzle(c);
+
+    const result = await db
+        .insert(members)
+        .values(data)
+        .returning();
+
+    return result[0];
+}
