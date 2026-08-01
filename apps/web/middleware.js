@@ -2,10 +2,11 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
     const session = request.cookies.get("session")?.value;
-
     const { pathname } = request.nextUrl;
 
-    if (!session && pathname !== "/login") {
+    const isProtectedRoute = pathname.startsWith("/members") || pathname.startsWith("/admin");
+
+    if (!session && isProtectedRoute) {
         return NextResponse.redirect(new URL("/login", request.url));
     }
 

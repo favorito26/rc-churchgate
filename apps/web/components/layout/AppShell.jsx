@@ -30,6 +30,15 @@ export default function AppShell({ children }) {
                     >
                         Members
                     </Link>
+
+                    {user?.role === "admin" && (
+                        <Link
+                            href="/admin/events"
+                            className="block rounded px-3 py-2 hover:bg-gray-100"
+                        >
+                            Events Manager
+                        </Link>
+                    )}
                 </nav>
 
                 {user && (

@@ -3,6 +3,8 @@ export function toMemberResponse(member) {
         id: member.id,
         firstName: member.firstName,
         lastName: member.lastName,
+        email: member.email ?? null,
+        role: member.role,
         phone: member.phone,
         profession: member.profession,
         joinedAt: member.joinedAt,

@@ -19,8 +19,9 @@ export default function LoginPage() {
         setError("");
 
         try {
-            await login({ email, password });
-            router.push("/");
+            const user = await login({ email, password });
+            const redirectPath = user?.role === "admin" ? "/admin/events" : "/";
+            router.push(redirectPath);
             router.refresh();
         } catch (err) {
             setError(err.message);

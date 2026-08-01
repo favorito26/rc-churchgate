@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getMembers } from "@/lib/members";
+import { getMembers, createMember } from "@/lib/members";
+import MemberForm from "@/components/members/MemberForm";
 import DataTable from "@/components/ui/DataTable";
 import Modal from "@/components/ui/Modal";
 
@@ -10,16 +11,26 @@ export default function MembersPage() {
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-        async function loadMembers() {
-            try {
-                const response = await getMembers();
-                setMembers(response.data);
-            } finally {
-                setLoading(false);
-            }
+    const loadMembers = async () => {
+        try {
+            const response = await getMembers();
+            setMembers(response.data);
+        } finally {
+            setLoading(false);
         }
+    };
 
+    const handleCreateMember = async (data) => {
+        try {
+            await createMember(data);
+            setOpen(false);
+            await loadMembers();
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
         loadMembers();
     }, []);
 
@@ -73,7 +84,7 @@ export default function MembersPage() {
                 title="New Member"
                 onClose={() => setOpen(false)}
             >
-                <p>This is the member form.</p>
+                <MemberForm onSubmit={handleCreateMember} />
             </Modal>
         </div>
     );

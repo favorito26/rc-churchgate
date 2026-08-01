@@ -62,6 +62,7 @@ export default function MemberForm({
                 placeholder="Password"
                 value={form.password}
                 onChange={handleChange}
+                minLength={8}
                 className="w-full rounded border p-2"
             />
 
