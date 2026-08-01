@@ -9,8 +9,10 @@
   "scripts": {
     "dev:web": "npm run dev --workspace=web",
     "dev:api": "npm run dev --workspace=api",
-    "build": "npm run build --workspaces",
-    "lint": "npm run lint --workspaces"
+    "build": "npm run build --workspace=web",
+    "build:web": "npm run build --workspace=web",
+    "build:api": "echo \"API is deployed via Wrangler; no build step required\"",
+    "lint": "npm run lint --workspace=web"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
