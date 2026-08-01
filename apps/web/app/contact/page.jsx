@@ -2,10 +2,10 @@ import SiteHeader from "@/components/public/SiteHeader";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.16),_transparent_45%)] text-slate-900">
+    <main className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.16),_transparent_45%)] text-slate-900">
       <SiteHeader current="contact" />
 
-      <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+      <section className="mx-auto max-w-5xl flex-1 px-6 py-16 lg:px-8">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">Contact</p>
         <h1 className="mt-4 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
           Let’s connect and create impact together.
