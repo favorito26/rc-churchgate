@@ -61,9 +61,8 @@ export default function HomePage() {
         >
           <source src="/churchgaterc-hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.88)_8%,rgba(2,6,23,0.72)_42%,rgba(8,47,73,0.45)_70%,rgba(15,23,42,0.74)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.2),transparent_28%),radial-gradient(circle_at_left,rgba(6,182,212,0.16),transparent_34%)]" />
-
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.40)_8%,rgba(2,6,23,0.50)_42%,rgba(8,47,73,0.45)_70%,rgba(15,23,42,0.40)_100%)]" />
+   
         <div className="relative z-10">
           <Navbar />
 
@@ -73,7 +72,7 @@ export default function HomePage() {
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-teal-100 backdrop-blur-md">
                   Service Above Self
                 </span>
-                <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl xl:text-[4.5rem] xl:leading-[1.02]">
+                <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-4xl xl:text-6xl xl:leading-[1.02]">
                   A youth-led community creating impact in Churchgate through service and fellowship.
                 </h1>
                 <p className="mt-5 max-w-xl text-base leading-7 text-slate-200 sm:text-lg">
