@@ -1,5 +1,5 @@
 const API_URL =
-    process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787/api/v1";
+    process.env.NEXT_PUBLIC_API_URL ?? "https://api.mufaddal2003.workers.dev/api/v1";
 
 export async function api(path, options = {}) {
     const response = await fetch(`${API_URL}${path}`, {
