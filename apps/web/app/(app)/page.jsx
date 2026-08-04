@@ -1,3 +1,5 @@
+import Navbar from "@/components/layout/Navbar";
+
 const pillars = [
   {
     title: "Service Projects",
@@ -22,7 +24,6 @@ const highlights = [
   { value: "Service + Leadership", label: "What we focus on" },
   { value: "Rotary values", label: "Our foundation" },
 ];
-import Navbar from "@/components/layout/Navbar";
 const socials = [
   { name: "Facebook", href: "https://www.facebook.com/RotaractClubofChurchgate" },
   { name: "Instagram", href: "https://www.instagram.com/rcchurchgate" },
@@ -45,95 +46,92 @@ const leadership = [
   },
 ];
 
-const stats = [
-  "Youth-powered impact",
-  "Rotary values in action",
-  "Service above self",
-  "Inclusive leadership",
-];
-
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(20,184,166,0.16),_transparent_45%)] text-slate-900">
-      <Navbar />
+      <section className="h-screen relative isolate overflow-hidden bg-slate-950 text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="/churchgaterc-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(2,6,23,0.88)_8%,rgba(2,6,23,0.72)_42%,rgba(8,47,73,0.45)_70%,rgba(15,23,42,0.74)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.2),transparent_28%),radial-gradient(circle_at_left,rgba(6,182,212,0.16),transparent_34%)]" />
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-8 lg:px-8">
-        <div className="grid items-center gap-10 pb-16 pt-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <span className="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teal-700">
-              Service Above Self
-            </span>
-            <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-slate-900 md:text-6xl">
-              Crafting journeys that move with the currents of change and innovation.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-slate-600">
-              The Rotaract Club of Churchgate is a dynamic youth platform chartered on September 29, 1989, under the sponsorship of the Rotary Club of Bombay North, creating meaningful change through service, leadership, and friendship.
-            </p>
+        <div className="relative z-10">
+          <Navbar />
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#about"
-                className="rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-teal-700"
-              >
-                Learn More
-              </a>
-              <a
-                href="https://forms.gle/LyA6qQr2sYh4rtDD6"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-teal-300 hover:text-teal-700"
-              >
-                Join Now
-              </a>
-            </div>
+          <div className="mx-auto flex min-h-[calc(100vh-6.5rem)] max-w-7xl items-center px-6 pb-16 pt-10 lg:px-8 lg:pb-20">
+            <div className="w-full">
+              <div className="max-w-3xl">
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-teal-100 backdrop-blur-md">
+                  Service Above Self
+                </span>
+                <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl xl:text-[4.5rem] xl:leading-[1.02]">
+                  A youth-led community creating impact in Churchgate through service and fellowship.
+                </h1>
+                <p className="mt-5 max-w-xl text-base leading-7 text-slate-200 sm:text-lg">
+                  Chartered in 1989, we bring students and young professionals together to lead, serve, and grow.
+                </p>
 
-            <div className="mt-10 flex flex-wrap gap-4 text-sm text-slate-600">
-              {stats.map((item) => (
-                <div key={item} className="rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="rounded-[2rem] border border-teal-100 bg-white p-6 shadow-[0_25px_80px_rgba(13,148,136,0.12)]">
-              <div className="rounded-[1.5rem] bg-gradient-to-br from-teal-600 via-cyan-600 to-emerald-500 p-6 text-white">
-                <p className="text-sm uppercase tracking-[0.2em] text-teal-100">Our Mission</p>
-                <h2 className="mt-4 text-3xl font-bold">Serve society, develop leadership, and build lifelong friendships.</h2>
-                <div className="mt-8 space-y-4 text-sm text-teal-50">
-                  <div className="flex items-center justify-between rounded-2xl bg-white/10 px-4 py-3">
-                    <span>Community impact</span>
-                    <span className="font-semibold">Ongoing</span>
-                  </div>
-                  <div className="flex items-center justify-between rounded-2xl bg-white/10 px-4 py-3">
-                    <span>Skill-building</span>
-                    <span className="font-semibold">Driven</span>
-                  </div>
-                  <div className="flex items-center justify-between rounded-2xl bg-white/10 px-4 py-3">
-                    <span>Creative engagement</span>
-                    <span className="font-semibold">Active</span>
-                  </div>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="#about"
+                    className="rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_16px_40px_rgba(20,184,166,0.35)] transition hover:bg-teal-400"
+                  >
+                    Learn More
+                  </a>
+                  <a
+                    href="https://forms.gle/LyA6qQr2sYh4rtDD6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:border-teal-300/60 hover:bg-white/15"
+                  >
+                    Join Now
+                  </a>
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
       </section>
 
       <section id="about" className="bg-slate-900 py-20 text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1fr_1.05fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">About us</p>
             <h2 className="mt-4 text-3xl font-bold md:text-4xl">A vibrant club for young changemakers and community builders.</h2>
           </div>
-          <div className="space-y-5 text-lg text-slate-300">
-            <p>
-              The Rotaract Club of Churchgate is a platform where students and young professionals come together to serve society, develop leadership skills, and build lifelong friendships.
-            </p>
-            <p>
-              Through service projects, skill-building initiatives, and creative events, the club gives members the opportunity to make an impact while also learning, growing, and connecting with peers who share the same passion for change.
-            </p>
+          <div className="space-y-6">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_60px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">Our mission</p>
+              <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
+                Serve society, develop leadership, and build lifelong friendships.
+              </h3>
+              <div className="mt-5 space-y-4 text-lg leading-8 text-slate-300">
+                <p>
+                  The Rotaract Club of Churchgate is a platform where students and young professionals come together to serve society, develop leadership skills, and build lasting bonds.
+                </p>
+                <p>
+                  Through service projects, skill-building initiatives, and creative events, members get the chance to make an impact while learning, growing, and connecting with others who care deeply about change.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {highlights.map((item) => (
+                <div key={item.label} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-2xl font-black text-white">{item.value}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

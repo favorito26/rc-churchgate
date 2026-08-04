@@ -38,7 +38,7 @@ export default function Navbar() {
 
     return (
         <header className="w-full px-4 pt-6 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl rounded-[28px] border border-teal-100 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
+            <div className="mx-auto max-w-7xl rounded-[28px] border border-teal-100 bg-white/60 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-5">
                 <div className="flex items-center justify-between gap-3">
                     <Link href="/" className="flex items-center gap-3" onClick={handleNavClick}>
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-600 text-lg font-bold text-white">
